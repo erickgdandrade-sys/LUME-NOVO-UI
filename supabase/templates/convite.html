@@ -1,0 +1,65 @@
+<div
+  style="
+    margin: 0;
+    padding: 32px 16px;
+    background: #f4f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1b2744;
+  "
+>
+  <div
+    style="
+      max-width: 520px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid #e3e8f0;
+    "
+  >
+    <img
+      src="{{ .SiteURL }}/email-logo.png"
+      alt="Lume"
+      height="44"
+      style="display: block; height: 44px; margin: 0 0 24px"
+    />
+    <h1 style="margin: 0 0 12px; font-size: 22px">Você recebeu um convite</h1>
+    <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6">
+      {{ if .Data.admin }}A equipe da Lume convidou você para ser Admin Lume: criar escolas,
+      convidar gestores e acompanhar os pedidos de demonstração da Lume, a plataforma que ajuda a
+      tornar cada aula mais inclusiva.{{ else }}Sua escola convidou você para usar a Lume, a
+      plataforma que ajuda a tornar cada aula mais inclusiva, com o apoio da Lumis, nossa assistente
+      de IA.{{ end }}
+    </p>
+    <p style="margin: 24px 0">
+      <a
+        href="{{ .SiteURL }}/confirmar?token_hash={{ .TokenHash }}&type=invite"
+        style="
+          display: inline-block;
+          background: #3f74e0;
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 15px;
+          padding: 14px 28px;
+          border-radius: 999px;
+        "
+        >Aceitar convite</a
+      >
+    </p>
+    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6b7690">
+      Ao aceitar, você vai criar sua senha de acesso. Se não esperava este convite, é só ignorar.
+    </p>
+  </div>
+  <p
+    style="
+      max-width: 520px;
+      margin: 16px auto 0;
+      text-align: center;
+      font-size: 12px;
+      color: #8a94ab;
+    "
+  >
+    Lume · Mais inclusão, menos barreiras
+  </p>
+</div>

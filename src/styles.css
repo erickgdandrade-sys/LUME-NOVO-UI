@@ -1,0 +1,361 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Escala de cantos contida: cards em 12px, blocos de destaque no máximo 18px. */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+  --radius-3xl: 18px;
+  --radius-4xl: 22px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-tangerine: var(--tangerine);
+  --color-tangerine-soft: var(--tangerine-soft);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-leaf: var(--leaf);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-lilac: var(--lilac);
+  --color-lilac-soft: var(--lilac-soft);
+
+  --color-chart-1: var(--primary);
+  --color-chart-2: var(--leaf);
+  --color-chart-3: var(--sun);
+  --color-chart-4: var(--coral);
+  --color-chart-5: var(--sky);
+
+  --color-liga-bronze: var(--liga-bronze);
+  --color-liga-prata: var(--liga-prata);
+  --color-liga-ouro: var(--liga-ouro);
+  --color-liga-platina: var(--liga-platina);
+  --color-liga-diamante: var(--liga-diamante);
+
+  /* Hierarquia da marca: Sora em títulos e números, Inter na interface,
+     Nunito só nos momentos de conquista (ligas, comemorações, Lumis). */
+  --font-display: "Sora", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-conquista: "Nunito", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 1px 2px 0 oklch(0.26 0.05 264 / 0.06);
+  --shadow-lift:
+    0 2px 4px -1px oklch(0.26 0.05 264 / 0.06), 0 8px 20px -8px oklch(0.26 0.05 264 / 0.12);
+}
+
+/* O tema claro também vale dentro de .claro-fixo (folhas de impressão no modo escuro). */
+:root,
+.dark .claro-fixo {
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.26 0.052 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.052 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.052 264);
+  --primary: oklch(0.575 0.185 259);
+  --primary-foreground: oklch(0.995 0.003 250);
+  --secondary: oklch(0.965 0.008 250);
+  --secondary-foreground: oklch(0.32 0.05 264);
+  --muted: oklch(0.968 0.006 250);
+  --muted-foreground: oklch(0.54 0.028 258);
+  --accent: oklch(0.955 0.022 255);
+  --accent-foreground: oklch(0.32 0.06 262);
+  --destructive: oklch(0.62 0.19 22);
+  --destructive-foreground: oklch(0.995 0.003 250);
+  --border: oklch(0.925 0.009 250);
+  --input: oklch(0.9 0.011 250);
+  --ring: oklch(0.575 0.185 259);
+
+  --coral: oklch(0.67 0.155 22);
+  --coral-soft: oklch(0.96 0.025 22);
+  --tangerine: oklch(0.74 0.14 55);
+  --tangerine-soft: oklch(0.965 0.03 60);
+  --sun: oklch(0.83 0.14 88);
+  --sun-soft: oklch(0.97 0.04 92);
+  --leaf: oklch(0.68 0.13 146);
+  --leaf-soft: oklch(0.962 0.03 148);
+  --sky: oklch(0.7 0.11 226);
+  --sky-soft: oklch(0.962 0.024 228);
+  --lilac: oklch(0.64 0.13 300);
+  --lilac-soft: oklch(0.96 0.026 300);
+
+  --liga-bronze: oklch(0.58 0.11 55);
+  --liga-prata: oklch(0.55 0.02 255);
+  --liga-ouro: oklch(0.68 0.14 85);
+  --liga-platina: oklch(0.58 0.09 195);
+  --liga-diamante: oklch(0.56 0.17 275);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #111827;
+  --foreground: #f1f4f9;
+  --card: #182132;
+  --card-foreground: #f1f4f9;
+  --popover: #1b2438;
+  --popover-foreground: #f1f4f9;
+  --primary: #6e9bf0;
+  --primary-foreground: #0f1626;
+  --secondary: #222c40;
+  --secondary-foreground: #f1f4f9;
+  --muted: #1f293b;
+  --muted-foreground: #a3aec2;
+  --accent: #24304a;
+  --accent-foreground: #f1f4f9;
+  --destructive: #e5676b;
+  --destructive-foreground: #0f1626;
+  --border: rgb(255 255 255 / 9%);
+  --input: rgb(255 255 255 / 14%);
+  --ring: #6e9bf0;
+
+  --coral-soft: #3a2328;
+  --tangerine-soft: #3a2a1f;
+  --sun-soft: #37321c;
+  --leaf-soft: #1e3326;
+  --sky-soft: #1c2e3f;
+  --lilac-soft: #2d2440;
+
+  --liga-bronze: oklch(0.72 0.11 55);
+  --liga-prata: oklch(0.78 0.02 255);
+  --liga-ouro: oklch(0.82 0.14 85);
+  --liga-platina: oklch(0.76 0.09 195);
+  --liga-diamante: oklch(0.74 0.14 275);
+}
+
+.dark .claro-fixo {
+  color-scheme: light;
+  color: var(--foreground);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@utility card-soft {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Lumis e comemorações */
+@keyframes lumis-flutuar {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(6deg);
+  }
+}
+@keyframes lumis-girar {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  55% {
+    transform: rotate(220deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes lumis-cambalhota {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  40% {
+    transform: translateY(-26px) rotate(-180deg);
+  }
+  75% {
+    transform: translateY(0) rotate(-360deg) scale(1.08, 0.92);
+  }
+  100% {
+    transform: translateY(0) rotate(-360deg) scale(1);
+  }
+}
+@keyframes lumis-pulinho {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  12% {
+    transform: translateY(2px) scale(1.12, 0.88);
+  }
+  35% {
+    transform: translateY(-22px) scale(0.94, 1.06);
+  }
+  55% {
+    transform: translateY(0) scale(1.08, 0.92);
+  }
+  70% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+@keyframes lumis-balanco {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(-14deg);
+  }
+  40% {
+    transform: rotate(12deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  80% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes lumis-surgir {
+  0% {
+    transform: scale(0.3) rotate(-30deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15) rotate(8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes lumis-brilho {
+  0%,
+  100% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes frase-entrar {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes frase-sair {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+@keyframes confete {
+  0% {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) rotate(var(--r));
+    opacity: 0;
+  }
+}
+
+@utility animate-lumis-surgir {
+  animation: lumis-surgir 0.55s ease-out both;
+}
+@utility animate-frase-entrar {
+  animation: frase-entrar 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@utility animate-frase-sair {
+  animation: frase-sair 0.5s ease-in both;
+}
+@utility animate-lumis-brilho {
+  animation: lumis-brilho 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lumis-anima,
+  .lumis-anima *,
+  .animate-lumis-surgir,
+  .animate-lumis-brilho {
+    animation: none !important;
+  }
+  .confetes,
+  .animate-frase-sair {
+    display: none;
+  }
+}
+
+@media print {
+  /* Sem margem na página o navegador não imprime endereço, data e título nos cantos.
+     O espaço da margem fica no body e se repete em cada folha. */
+  @page {
+    margin: 0;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  body {
+    padding: 1.5cm;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+}

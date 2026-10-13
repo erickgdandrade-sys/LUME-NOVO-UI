@@ -1,0 +1,9 @@
+{
+  "name": "projeto-lume",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "lumeedu.com.br", "custom_domain": true },
+    { "pattern": "www.lumeedu.com.br", "custom_domain": true }
+  ]
+}
